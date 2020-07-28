@@ -7,4 +7,4 @@ COPY cert/resty-auto-ssl-fallback.key /etc/ssl/default.key
 
 # Copy nginx configuration files
 COPY nginx-config/nginx.conf /etc/nginx/nginx.conf
-COPY nginx-config/jinli_nginx_base_config /etc/nginx/conf/jinli_nginx_base_config
+COPY nginx-config/jinli_nginx_base_config /etc/nginx/jinli_nginx_base_config
