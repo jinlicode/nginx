@@ -32,4 +32,4 @@ jobs:
           --platform=linux/amd64 \
           --output "type=image,push=true" \
           --file ./Dockerfile . \
-          --tag jinlicode/openresty:latest
+          --tag jinlicode/nginx:latest
