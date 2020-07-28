@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine
 
-RUN apk add --no-cache certbot
+RUN apk add --no-cache certbot certbot-nginx
 
 COPY cert/resty-auto-ssl-fallback.crt /etc/ssl/default.crt
 COPY cert/resty-auto-ssl-fallback.key /etc/ssl/default.key
