@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN apt update \
-    && apt upgrade\
+    && apt -y upgrade\
     && apt install --no-install-recommends -y nginx-full cron certbot python3-certbot-nginx
 
 COPY cert/resty-auto-ssl-fallback.crt /etc/ssl/default.crt
