@@ -1,9 +1,9 @@
 FROM nginx:stable-alpine
 
-RUN add --no-cache certbot
+RUN apk add --no-cache certbot
 
-COPY cert/resty-auto-ssl-fallback.crt /etc/ssl/resty-auto-ssl-fallback.crt
-COPY cert/resty-auto-ssl-fallback.key /etc/ssl/resty-auto-ssl-fallback.key
+COPY cert/resty-auto-ssl-fallback.crt /etc/ssl/default.crt
+COPY cert/resty-auto-ssl-fallback.key /etc/ssl/default.key
 
 # Copy nginx configuration files
 COPY nginx-config/nginx.conf /etc/nginx/nginx.conf
