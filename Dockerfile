@@ -4,7 +4,7 @@ RUN apt update \
     && apt -y upgrade\
     && apt install --no-install-recommends -y nginx-full cron certbot python3-certbot-nginx logrotate \
     && rm -rf /etc/cron.daily/logrotate \
-    && echo "59 11 * * * root /usr/bin/certbot renew > /dev/null" >> /etc/crontab \
+    && echo "59 11 * * * root /usr/bin/certbot renew > /dev/null" >> /etc/crontab
 
 COPY cert/resty-auto-ssl-fallback.crt /etc/ssl/default.crt
 COPY cert/resty-auto-ssl-fallback.key /etc/ssl/default.key
