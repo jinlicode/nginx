@@ -3,7 +3,7 @@ name: Build Image
 on:
   push:
     branches:
-      - "master"
+      - "v1"
     paths-ignore:
       - "README.md"
 
@@ -32,4 +32,4 @@ jobs:
           --platform=linux/amd64 \
           --output "type=image,push=true" \
           --file ./Dockerfile . \
-          --tag jinlicode/nginx:latest
+          --tag jinlicode/nginx:v1
