@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cron
+service cron restart
 nginx -g 'daemon off;'
