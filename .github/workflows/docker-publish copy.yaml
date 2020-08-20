@@ -32,4 +32,4 @@ jobs:
           --platform=linux/amd64 \
           --output "type=image,push=true" \
           --file ./Dockerfile . \
-          --tag registry.cn-beijing.aliyuncs.com/jinlicode/nginx::v1
+          --tag registry.cn-beijing.aliyuncs.com/jinlicode/nginx:v1
