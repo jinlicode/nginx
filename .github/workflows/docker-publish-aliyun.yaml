@@ -3,7 +3,7 @@ name: Build Image
 on:
   push:
     branches:
-      - "v1"
+      - "master"
     paths-ignore:
       - "README.md"
 
@@ -26,10 +26,10 @@ jobs:
           buildx-version: latest
       - name: Build dockerfile (with push)
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME_ALIYUN }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
           docker buildx build \
           --platform=linux/amd64 \
           --output "type=image,push=true" \
           --file ./Dockerfile . \
-          --tag registry.cn-beijing.aliyuncs.com/jinlicode/nginx:v1
+          --tag registry.cn-beijing.aliyuncs.com/jinlicode/nginx:latest
