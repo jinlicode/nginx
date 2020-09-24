@@ -1,4 +1,4 @@
-name: Build Image
+name: Hub Build Image
 
 on:
   push:

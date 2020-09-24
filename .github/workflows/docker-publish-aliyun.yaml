@@ -1,4 +1,4 @@
-name: Build Image
+name: Aliyun Build Image
 
 on:
   push:
