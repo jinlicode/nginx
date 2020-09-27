@@ -3,7 +3,7 @@ name: Aliyun Build Image
 on:
   push:
     branches:
-      - "master"
+      - "v1"
     paths-ignore:
       - "README.md"
 
