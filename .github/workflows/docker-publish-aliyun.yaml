@@ -26,10 +26,10 @@ jobs:
           buildx-version: latest
       - name: Build dockerfile (with push)
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME_ALIYUN }}
         run: |
           docker buildx build \
           --platform=linux/amd64 \
           --output "type=image,push=true" \
           --file ./Dockerfile . \
-          --tag registry.cn-beijing.aliyuncs.com/jinlicode/nginx:latest
+          --tag registry.cn-beijing.aliyuncs.com/jinlicode/nginx:v1
