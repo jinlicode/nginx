@@ -1,4 +1,4 @@
-name: Hub Build Image
+name: Build And Image
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - "README.md"
 
 jobs:
-  multi:
+  push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +26,27 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Login to Jinlihub
+        uses: docker/login-action@v1
+        with:
+          registry: hub.jinli.plus
+          username: ${{ secrets.DOCKER_USERNAME_JINLI }}
+          password: ${{ secrets.DOCKER_PASSWORD_JINLI }}
+
+      - name: Login to Github
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GIT_USER }}
+          password: ${{ secrets.GIT_TOKEN }}
+
+      - name: Login to Aliyun
+        uses: docker/login-action@v1
+        with:
+          registry: registry.cn-beijing.aliyuncs.com
+          username: ${{ secrets.DOCKER_USERNAME_ALIYUN }}
+          password: ${{ secrets.DOCKER_PASSWORD_ALIYUN }}
+
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
@@ -35,3 +56,6 @@ jobs:
           push: true
           tags: |
             jinlicode/nginx:v1
+            hub.jinli.plus/jinlicode/nginx:v1
+            ghcr.io/jinlicode/nginx:v1
+            registry.cn-beijing.aliyuncs.com/jinlicode/nginx:v1
