@@ -30,7 +30,7 @@ jobs:
       - name: Login to Aliyun
         uses: docker/login-action@v1
         with:
-          registry: registry.cn-beijing.aliyuncs.com
+          registry: registry.cn-guangzhou.aliyuncs.com
           username: ${{ secrets.DOCKER_USERNAME_ALIYUN }}
           password: ${{ secrets.DOCKER_PASSWORD_ALIYUN }}
 
@@ -43,4 +43,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/jinlicode/nginx:v1
-            registry.cn-beijing.aliyuncs.com/jinlicode/nginx:v1
+            registry.cn-guangzhou.aliyuncs.com/jinlicode/nginx:v1
