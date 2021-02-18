@@ -1,4 +1,5 @@
 FROM ubuntu:20.04
+LABEL org.opencontainers.image.source=https://github.com/jinlicode/nginx
 
 RUN apt update \
     && apt -y upgrade\
